@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevDigi - Digital Development</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
+body{background:#fff;color:#0f172a;line-height:1.5}
+a{text-decoration:none;color:inherit}
+/* HEADER */
+header{background:#fff;position:sticky;top:0;z-index:20;border-bottom:1px solid #e2e8f0}
+.nav{max-width:1200px;margin:auto;padding:10px 16px;display:flex;justify-content:space-between;align-items:center}
+.logo-img{height:48px;width:auto}
+.menu{display:flex;gap:26px;align-items:center;font-weight:700;font-size:15px}
+.menu a.active{border-bottom:3px solid #7ec8ff;padding-bottom:2px}
+.btn-masuk{border:1.5px solid #2563eb;color:#2563eb!important;padding:6px 16px;border-radius:8px;font-weight:800}
+/* HERO */
+.hero-wrap{background:linear-gradient(180deg,#bfe1ff,#8ecbff);overflow:hidden}
+.hero{max-width:1200px;margin:auto;padding:42px 16px 30px;display:grid;grid-template-columns:1.1fr 1fr;gap:20px;align-items:center}
+.hero h1{font-size:50px;line-height:1.05;letter-spacing:-1px}
+.hero p{margin:14px 0;color:#1e293b}
+.btn{display:inline-block;padding:12px 26px;border-radius:6px;font-weight:800;color:#fff!important}
+.btn-blue{background:#0b6cff}
+.btn-wa{background:#22c55e}
+.mock{position:relative;height:310px}
+.laptop{position:absolute;left:10px;top:18px;width:82%;height:230px;background:#dbeafe;border:6px solid #94a3b8;border-radius:14px 14px 0 0;padding:10px;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.laptop-base{position:absolute;left:0;top:248px;width:88%;height:14px;background:#cbd5e1;border-radius:0 0 10px 10px}
+.laptop-inner{background:#fff;border-radius:8px;height:100%;padding:10px;display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px}
+.mini{background:#f1f5f9;border-radius:6px;padding:8px}
+.mini b{color:#2563eb}
+.phone{position:absolute;right:0;top:0;width:132px;height:264px;background:#fff;border:4px solid #0f172a;border-radius:22px;padding:10px;box-shadow:0 10px 20px rgba(0,0,0,.25);z-index:2}
+.phone small{font-size:10px;color:#64748b}
+.phone b{font-size:13px;line-height:1.2;display:block}
+/* LAYANAN */
+section{max-width:1200px;margin:auto;padding:34px 16px}
+h2{text-align:center;font-size:36px}
+.sub{text-align:center;color:#334155;margin-bottom:22px}
+.grid6{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.scard{border:1px solid #e2e8f0;border-radius:12px;padding:14px;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.scard .ic{font-size:26px;color:#2563eb}
+.scard h3{font-size:13px;margin:8px 0 6px}
+.scard p{font-size:11px;color:#475569;line-height:1.45}
+/* HARGA */
+.harga-wrap{background:#e6f2ff}
+.harga-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:start}
+.hcard{background:#fff;border-radius:12px;padding:16px;box-shadow:0 2px 12px rgba(0,0,0,.06);border:1px solid #e2e8f0}
+.hcard h3{font-size:15px;text-align:center}
+.hcard .price{font-size:24px;font-weight:900;text-align:center;margin:6px 0}
+.hcard ul{list-style:none;font-size:12px;color:#334155}
+.hcard li{margin:6px 0}
+.hcard li:before{content:"✓ ";color:#2563eb;font-weight:900}
+.btn-order{display:block;text-align:center;border:1.5px solid #2563eb;color:#2563eb;padding:9px;border-radius:8px;font-weight:800;margin-top:12px;font-size:13px}
+.btn-order.fill{background:#2563eb;color:#fff!important}
+.badge-laris{background:#2563eb;color:#fff;font-size:11px;font-weight:800;padding:4px 10px;border-radius:10px 10px 0 0;display:block;text-align:center;margin:-16px -16px 10px}
+input,select,textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:6px;margin:6px 0;font-size:13px}
+.kontak{background:#dbeafe;border-radius:12px;padding:16px;font-size:13px}
+.kontak p{margin:10px 0}
+footer{background:#8ecbff;text-align:center;padding:20px 16px;font-size:13px}
+@media(max-width:900px){.hero,.grid6,.harga-grid{grid-template-columns:1fr 1fr}.hero h1{font-size:34px}.menu{display:none}.mock{height:280px}}
+@media(max-width:600px){.grid6,.harga-grid{grid-template-columns:1fr}}
+.testi-wrap{overflow:hidden;max-width:900px;margin:auto}
+.testi-track{display:flex;transition:transform .6s ease}
+.tcard{min-width:100%;padding:10px;text-align:center}
+.tcard img{width:90px;height:90px;border-radius:50%;object-fit:cover;border:3px solid #2563eb}
+.tcard .stars{color:#f59e0b;font-size:18px;margin:6px 0}
+.tcard p{font-size:14px;color:#334155;max-width:650px;margin:auto}
+.tcard b{display:block;margin-top:10px}
+.tcard small{color:#64748b}
+.testi-dots{text-align:center;margin-top:10px}
+.testi-dots span{display:inline-block;width:9px;height:9px;background:#cbd5e1;border-radius:50%;margin:0 3px;cursor:pointer}
+.testi-dots span.on{background:#2563eb}
+/* === TAMBAHAN HP & TABLET ONLY - DESKTOP TIDAK BERUBAH === */
+@media (max-width:1024px){
+  .grid3{grid-template-columns:1fr 1fr!important}
+  .grid6{grid-template-columns:1fr 1fr!important}
+  .hero{grid-template-columns:1fr!important;text-align:center}
+  .hero img{max-width:420px;margin:0 auto}
+}
+@media (max-width:768px){
+  .wrap{padding:0 14px!important}
+  header .wrap{flex-wrap:wrap;gap:10px}
+  nav{display:flex;flex-wrap:wrap;gap:8px;font-size:13px}
+  nav a{margin:0!important}
+  .hero{padding:28px 0!important}
+  .hero{display:flex!important;flex-direction:column!important;text-align:center!important}
+  .hero>div:first-child{order:2!important;width:100%!important}
+  .hero>div:last-child{order:1!important;width:100%!important;margin-bottom:16px!important}
+  .hero>div:last-child img{width:100%!important;max-width:360px!important;display:block!important;margin:0 auto!important}
+  .hero h1{text-align:center!important}
+  .hero p{text-align:center!important;margin-left:auto!important;margin-right:auto!important}
+  .hero>div:first-child>div:last-child{display:flex!important;flex-wrap:wrap!important;justify-content:center!important;gap:10px!important}
+  .hero .btn{width:auto!important;min-width:150px!important}
+  .hero h1{font-size:28px!important;line-height:1.25}
+  .hero p{font-size:15px!important}
+  .grid2,.grid3,.grid6{grid-template-columns:1fr!important}
+  .scard img{height:auto!important}
+  .price{font-size:26px!important}
+  input,select,textarea{font-size:16px!important}
+  .btn{width:100%;text-align:center;box-sizing:border-box}
+  footer .wrap{flex-direction:column;text-align:center;gap:8px}
+}
+/* === BURGER MENU HP ONLY - DESKTOP TIDAK BERUBAH === */
+.burger{display:none}
+.mobile-menu{display:none}
+@media(max-width:900px){
+  .burger{display:flex!important;align-items:center;justify-content:center;width:42px;height:42px;font-size:24px;line-height:1;background:#fff;border:1px solid #e2e8f0;border-radius:8px;cursor:pointer;color:#0f172a}
+  .mobile-menu{display:none;flex-direction:column;gap:0;background:#fff;border-top:1px solid #e2e8f0;padding:8px 16px 14px}
+  .mobile-menu.open{display:flex!important}
+  .mobile-menu a{padding:12px 8px;border-bottom:1px solid #f1f5f9;font-weight:700;font-size:15px}
+  .mobile-menu a:last-child{border-bottom:0}
+  .mobile-menu .btn-masuk{display:block;text-align:center;margin-top:10px}
+}
+</style>
+</head>
+<body>
+<header><div class="nav">
+<img src="logo.png" class="logo-img" alt="DevDigi">
+<div class="menu"><a href="#" class="active">Beranda</a><a href="#layanan">Layanan</a><a href="#harga">Harga</a><a href="#portfolio">Portofolio</a><a href="#testimoni">Testimoni</a><a href="#kontak">Kontak</a><a href="#checkout" class="btn-masuk">Masuk</a></div>
+<button class="burger" id="burgerBtn" aria-label="Buka menu">☰</button>
+</div>
+<div class="mobile-menu" id="mobileMenu"><a href="#">Beranda</a><a href="#layanan">Layanan</a><a href="#harga">Harga</a><a href="#portfolio">Portofolio</a><a href="#testimoni">Testimoni</a><a href="#kontak">Kontak</a><a href="#checkout" class="btn-masuk">Masuk</a></div>
+</header>
+
+<div class="hero-wrap"><div class="hero">
+<div>
+<h1>Website & Aplikasi<br>Untuk Bisnis Kamu,<br>Cepat & Profesional.</h1>
+<p>Kami membantu bisnis Anda berkembang dengan website dan aplikasi modern, responsif, dan siap meningkatkan penjualan.</p>
+<a href="#harga" class="btn btn-blue">Lihat Harga</a>
+<a href="https://wa.me/6282295567747?text=Halo%20DevDigi" class="btn btn-wa" style="margin-left:8px">💬 Chat WA</a>
+</div>
+<div><img src="hero.png" style="width:100%"></div>
+</div></div>
+
+<section id="layanan"><h2>Layanan Kami</h2><p class="sub">Solusi digital lengkap untuk mendukung pertumbuhan bisnis Anda</p>
+<div class="grid6">
+<div class="scard"><div class="ic">🌐</div><h3>Pembuatan Website</h3><p>Website company profile, landing page, toko online yang cepat & SEO-friendly</p></div>
+<div class="scard"><div class="ic">📱</div><h3>Pembuatan Aplikasi Mobile</h3><p>Aplikasi Android & iOS modern, user-friendly, dan performa optimal</p></div>
+<div class="scard"><div class="ic">✏️</div><h3>UI/UX Design</h3><p>Desain antarmuka modern, intuitif, dan menarik untuk pengguna</p></div>
+<div class="scard"><div class="ic">🔍</div><h3>Integrasi Sistem</h3><p>Menyambungkan website & aplikasi dengan WhatsApp, pembayaran, Maps, dan sistem bisnis Anda agar data otomatis & tidak input manual</p></div>
+<div class="scard"><div class="ic">⚙️</div><h3>SEO & Digital Marketing</h3><p>Meningkatkan visibilitas bisnis Anda di Google & media digital</p></div>
+<div class="scard"><div class="ic">🔗</div><h3>Maintenance & Support</h3><p>Perawatan, update, dan dukungan teknis berkelanjutan 24/7 lainnya</p></div>
+</div></section>
+
+<section id="portfolio"><h2>Portofolio Kami</h2><p class="sub">Beberapa project yang sudah kami kerjakan untuk klien</p>
+<div class="grid6">
+<div class="scard"><img src="portfolio-umkm.jpg" style="width:100%;border-radius:8px;margin-bottom:8px" alt="Portofolio Website Company Profile UMKM - Keripik Singkong Mak Ijah"><h3>Website Company Profile</h3><p>Website company profile modern untuk bisnis jasa, lengkap dengan WhatsApp & Maps</p></div>
+<div class="scard"><img src="portfolio-buah.jpg" style="width:100%;border-radius:8px;margin-bottom:8px" alt="Portofolio Toko Online Buah-buahan - Buah Segar"><h3>Toko Online</h3><p>Toko online dengan keranjang, checkout WA, dan manajemen produk</p></div>
+<div class="scard"><img src="portfolio-elekmart.jpg" style="width:100%;border-radius:8px;margin-bottom:8px" alt="Portofolio Aplikasi Mobile Toko Elektronik - ElekMart"><h3>Aplikasi Mobile</h3><p>Aplikasi Android & iOS untuk pemesanan, katalog, dan layanan pelanggan</p></div>
+<div class="scard"><img src="portfolio-bimbel.jpg" style="width:100%;border-radius:8px;margin-bottom:8px" alt="Portofolio Landing Page Bimbel Cerdas"><h3>Landing Page</h3><p>Landing page cepat untuk promosi, launching produk, dan iklan</p></div>
+<div class="scard"><img src="portfolio-hijab.jpg" style="width:100%;border-radius:8px;margin-bottom:8px" alt="Portofolio UI/UX Design Toko Online Hijab - Hijabara"><div class="ic"></div><h3>UI/UX Design</h3><p>Desain antarmuka aplikasi & website yang modern dan mudah dipakai</p></div>
+<div class="scard"><img src="portfolio-seo.jpg" style="width:100%;border-radius:8px;margin-bottom:8px" alt="Portofolio SEO & Marketing Desain Arsitektur - Arsitek Nusantara"><h3>SEO & Marketing</h3><p>Optimasi website agar mudah ditemukan di Google</p></div>
+</div></section>
+
+<section id="testimoni"><h2>Testimoni Klien</h2><p class="sub">Apa kata mereka yang sudah pakai jasa DevDigi</p>
+<div class="testi-wrap" id="testiWrap"><div class="testi-track" id="testiTrack">
+
+<div class="tcard"><img src="foto-andi.jpg" alt="Andi Pratama"><div class="stars">★★★★★</div><p>"Website company profile dari DevDigi bikin bisnis saya langsung kelihatan profesional. Baru 2 minggu, order dari Google naik 2x lipat!"</p><b>Andi Pratama</b><small>Owner Toko Bangunan Berkah, Bandung</small></div>
+
+<div class="tcard"><img src="foto-sari.jpg" alt="Sari Dewi"><div class="stars">★★★★★</div><p>"Toko online-nya enak banget dipakai. Saya yang gaptek aja bisa update produk sendiri. Admin DevDigi sabar banget ngajarinnya."</p><b>Sari Dewi</b><small>Owner Hijab Sari, Jakarta</small></div>
+
+<div class="tcard"><img src="foto-budi.jpg" alt="Budi Santoso"><div class="stars">★★★★★</div><p>"Pesan landing page Rp 450rb, jadi dalam 3 hari. Cepat, rapi, dan langsung bisa dipakai iklan. Worth it banget!"</p><b>Budi Santoso</b><small>Owner Bimbel Cerdas, Surabaya</small></div>
+
+<div class="tcard"><img src="foto-rina.jpg" alt="Rina Marlina"><div class="stars">★★★★★</div><p>"Aplikasi pemesanan catering saya sekarang sudah di Play Store. Pelanggan tinggal klik, pesanan langsung masuk WA. Omzet naik 40%."</p><b>Rina Marlina</b><small>Owner Catering Rina, Bandung</small></div>
+
+<div class="tcard"><img src="foto-fajar.jpg" alt="Fajar Nugroho"><div class="stars">★★★★★</div><p>"Website Pro-nya mantap. Desain premium, loading cepat, SEO-nya juga jalan. Sekarang klinik saya ranking 1 di Google Maps."</p><b>Fajar Nugroho</b><small>Owner Klinik Sehat Medika, Bekasi</small></div>
+
+<div class="tcard"><img src="foto-dewi.jpg" alt="Dewi Lestari"><div class="stars">★★★★★</div><p>"Dari awal konsultasi sampai website jadi, komunikasinya jelas. Revisi dilayani sampai saya puas. Recommended!"</p><b>Dewi Lestari</b><small>Owner Salon Dewi Beauty, Yogyakarta</small></div>
+
+<div class="tcard"><img src="foto-rizky.jpg" alt="Rizky Aditya"><div class="stars">★★★★★</div><p>"Saya order Aplikasi Basic untuk laundry. Ada login member, notifikasi, dan laporan harian. Usaha jadi jauh lebih rapi."</p><b>Rizky Aditya</b><small>Owner Laundry Kilat, Medan</small></div>
+
+<div class="tcard"><img src="foto-putri.jpg" alt="Putri Ayu"><div class="stars">★★★★★</div><p>"Toko online fashion saya sekarang order-nya 80% dari website. Tidak perlu lagi balas chat satu-satu, semua otomatis."</p><b>Putri Ayu</b><small>Owner Fashion Putri, Bali</small></div>
+
+<div class="tcard"><img src="foto-hendra.jpg" alt="Hendra Wijaya"><div class="stars">★★★★★</div><p>"Maintenance-nya gercep. Website error tengah malam, langsung dibantu. Ini yang bikin saya betah langganan di DevDigi."</p><b>Hendra Wijaya</b><small>Owner Travel Wijaya Tour, Semarang</small></div>
+
+<div class="tcard"><img src="foto-maya.jpg" alt="Maya Kusuma"><div class="stars">★★★★★</div><p>"Harga transparan, tidak ada biaya siluman. Paket 1,5jt dapat website sebagus ini, saya kira awalnya bakal 5 jutaan."</p><b>Maya Kusuma</b><small>Owner Kafe Maya, Malang</small></div>
+
+</div></div><div class="testi-dots" id="testiDots"></div></section>
+
+<div class="harga-wrap"><section id="harga"><h2>Harga Transparan</h2><p class="sub">Pilih paket yang sesuai kebutuhan bisnis Anda. Tanpa biaya tersembunyi.</p>
+<div class="harga-grid">
+<div class="hcard"><h3>Started Landing Page</h3><div class="price">Rp 450rb</div><ul><li>Desain 1 Page Responsif</li><li>Hosting & Domain 1 Tahun</li><li>Form Kontak WhatsApp</li><li>Optimasi SEO Dasar</li></ul><a href="#checkout" class="btn-order" onclick="pilihPaket('Started Landing Page - Rp 450rb')">Pesan Sekarang</a></div>
+
+<div class="hcard"><h3>Basic Landing Page</h3><div class="price">Rp 750rb</div><ul><li>Desain 1 Page Responsif</li><li>Hosting & Domain 1 Tahun</li><li>Form Kontak WhatsApp</li><li>Optimasi SEO Dasar</li></ul><a href="#checkout" class="btn-order" onclick="pilihPaket('Basic Landing Page - Rp 750rb')">Pesan Sekarang</a></div>
+
+<div class="hcard" style="border:2px solid #2563eb"><span class="badge-laris">Paling Laris</span><h3>Company Profile</h3><div class="price">Rp 1,5jt</div><ul><li>Hingga 5 Halaman</li><li>Desain Kustom Profesional</li><li>Hosting & Domain 1 Tahun</li><li>Integrasi WhatsApp & Maps</li><li>Panel Admin Mudah</li></ul><a href="#checkout" class="btn-order fill" onclick="pilihPaket('Company Profile - Rp 1,5jt')">Pesan Sekarang</a></div>
+
+<div class="hcard"><h3>Toko Online</h3><div class="price">Rp 2,5jt</div><ul><li>Hingga 50 Produk</li><li>Keranjang & Checkout</li><li>Pembayaran Online</li><li>Manajemen Produk & Pesanan</li><li>Laporan Penjualan</li></ul><a href="#checkout" class="btn-order" onclick="pilihPaket('Toko Online - Rp 2,5jt')">Pesan Sekarang</a></div>
+
+<div class="hcard"><h3>Website Pro</h3><div class="price">Rp 5,75jt</div><ul><li>Hingga 10 Halaman</li><li>Desain Kustom Premium</li><li>Hosting & Domain 1 Tahun</li><li>Integrasi WhatsApp & Maps</li><li>Panel Admin + SEO Lanjutan</li></ul><a href="#checkout" class="btn-order" onclick="pilihPaket('Website Pro - Rp 5,75jt')">Pesan Sekarang</a></div>
+
+<div class="hcard"><h3>Pembuatan Aplikasi Started</h3><div class="price">Rp 6,5jt</div><ul><li>Aplikasi Android</li><li>Hingga 5 Halaman App</li><li>Desain Modern Responsif</li><li>Integrasi WhatsApp</li></ul><a href="#checkout" class="btn-order" onclick="pilihPaket('Pembuatan Aplikasi Started - Rp 6,5jt')">Pesan Sekarang</a></div>
+
+<div class="hcard"><h3>Pembuatan Aplikasi Basic</h3><div class="price">Rp 19,5jt</div><ul><li>Aplikasi Android & iOS</li><li>Hingga 15 Halaman App</li><li>Login & Panel Admin</li><li>Notifikasi Push</li><li>Integrasi Pembayaran</li></ul><a href="#checkout" class="btn-order" onclick="pilihPaket('Pembuatan Aplikasi Basic - Rp 19,5jt')">Pesan Sekarang</a></div>
+
+<div class="hcard"><h3>Pembuatan Aplikasi Pro</h3><div class="price">Rp 75jt</div><ul><li>Aplikasi Android & iOS Full Custom</li><li>Fitur Tanpa Batas</li><li>Dashboard Admin Lengkap</li><li>Integrasi API & Pembayaran</li><li>Maintenance 1 Tahun</li></ul><a href="#checkout" class="btn-order" onclick="pilihPaket('Pembuatan Aplikasi Pro - Rp 75jt')">Pesan Sekarang</a></div>
+</div></section></div>
+
+<section id="checkout-bawah" style="max-width:800px;margin:auto;padding:34px 16px;display:grid;grid-template-columns:1fr;gap:20px;align-items:start">
+<div class="hcard" id="checkout"><h3 style="text-align:left">Checkout / Order Form</h3><p style="font-size:12px;color:#475569">Mudah dan cepat. Isi form untuk mulai project Anda:</p>
+<label style="font-size:12px">Nama Bisnis</label><input id="nama" placeholder="Nama Bisnis">
+<label style="font-size:12px">Layanan yang Dibutuhkan</label><select id="paket"><option>Started Landing Page - Rp 450rb</option><option>Basic Landing Page - Rp 750rb</option><option>Company Profile - Rp 1,5jt</option><option>Toko Online - Rp 2,5jt</option><option>Website Pro - Rp 5,75jt</option><option>Pembuatan Aplikasi Started - Rp 6,5jt</option><option>Pembuatan Aplikasi Basic - Rp 19,5jt</option><option>Pembuatan Aplikasi Pro - Rp 75jt</option></select>
+<label style="font-size:12px">Nomor WhatsApp</label><input id="waKamu" placeholder="Nomor WhatsApp">
+<label style="font-size:12px">Pesan / Kebutuhan Anda</label><textarea id="kebutuhan" rows="2" placeholder="Pesan / Kebutuhan Anda"></textarea>
+<a href="#" class="btn-order fill" onclick="checkoutWA()" style="background:#2563eb;color:#fff">Kirim Permintaan Sekarang</a>
+</div>
+<div class="kontak" id="kontak"><h3>Kontak Kami</h3><p>💬 WhatsApp: 0822-9556-7747</p><p>📍 Buah Batu Bandung, Jawa Barat</p><p>🕐 Jam Kerja: Senin - Sabtu, 08:00 - 17:00 WIB</p><p>✉️ Email: devdigi253@gmail.com</p><iframe src="https://www.google.com/maps?q=Buah%20Batu%2C%20Bandung%2C%20Jawa%20Barat&output=embed" style="width:100%;height:280px;border:0;border-radius:10px;margin-top:10px" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><p style="margin-top:8px"><a href="https://maps.app.goo.gl/rJ45crFsU4bBeRVW7?g_st=awb" target="_blank" style="color:#2563eb;font-weight:800">📍 Buka di Google Maps →</a></p></div>
+</section>
+
+<footer>© 2024 DevDigi | Digital Development. All rights reserved.<br>Kebijakan Privasi | Syarat & Ketentuan</footer>
+<script>
+function pilihPaket(p){document.getElementById('paket').value=p;document.getElementById('checkout').scrollIntoView({behavior:'smooth'})}
+function checkoutWA(){var n=document.getElementById('nama').value||'-';var w=document.getElementById('waKamu').value||'-';var p=document.getElementById('paket').value;var k=document.getElementById('kebutuhan').value||'-';var msg='Halo DevDigi, saya mau order:\n\nNama Bisnis: '+n+'\nWA: '+w+'\nPaket: '+p+'\nKebutuhan: '+k;window.open('https://wa.me/6282295567747?text='+encodeURIComponent(msg),'_blank')}
+var testiIdx=0;var testiTimer=null;
+var testiTrack=document.getElementById('testiTrack');var testiDots=document.getElementById('testiDots');var testiWrap=document.getElementById('testiWrap');
+for(var i=0;i<10;i++){var d=document.createElement('span');(function(n){d.onclick=function(){testiIdx=n;showTesti();}})(i);testiDots.appendChild(d);}
+function showTesti(){testiTrack.style.transform='translateX(-'+(testiIdx*100)+'%)';var ds=testiDots.children;for(var j=0;j<ds.length;j++){ds[j].className=j===testiIdx?'on':'';}}
+function startTesti(){stopTesti();testiTimer=setInterval(function(){testiIdx=(testiIdx+1)%10;showTesti();},3500);}
+function stopTesti(){if(testiTimer){clearInterval(testiTimer);testiTimer=null;}}
+if(testiWrap){testiWrap.addEventListener('mouseenter',stopTesti);testiWrap.addEventListener('mouseleave',startTesti);testiWrap.addEventListener('touchstart',stopTesti);testiWrap.addEventListener('touchend',startTesti);}
+showTesti();startTesti();
+var burgerBtn=document.getElementById('burgerBtn');var mobileMenu=document.getElementById('mobileMenu');
+if(burgerBtn&&mobileMenu){burgerBtn.onclick=function(){var isOpen=mobileMenu.classList.contains('open');mobileMenu.classList.toggle('open');burgerBtn.textContent=isOpen?'☰':'✕';};var mLinks=mobileMenu.querySelectorAll('a');for(var i=0;i<mLinks.length;i++){mLinks[i].onclick=function(){mobileMenu.classList.remove('open');burgerBtn.textContent='☰';};}}
+</script>
+</body>
+</html>
